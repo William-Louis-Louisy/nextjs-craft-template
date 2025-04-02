@@ -1,0 +1,19 @@
+{
+  "AdminPage": {
+    "title": "Admin Page",
+    "description": "If you see this page, you are logged in as an admin."
+  },
+  "HomePage": {
+    "title": "Next.js Craft Template",
+    "description": "A template for Next.js projects that include Next-Auth, Next-Intl and TailwindCSS"
+  },
+  "Header": {
+    "hello": "Hello",
+    "logout": "Logout",
+    "login": "Login"
+  },
+  "LocaleSwitch": {
+    "label": "Change language",
+    "locale": "{locale, select, fr {🇫🇷} en {🇺🇸} other {Unknown}}"
+  }
+}
