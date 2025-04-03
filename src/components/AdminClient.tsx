@@ -13,8 +13,8 @@ export default function AdminClient() {
         <Image
           src="/cover.png"
           alt="BakerScript Cover Picture"
-          fill
           objectFit="cover"
+          fill
         />
       </div>
     </>

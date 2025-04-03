@@ -15,5 +15,10 @@
   "LocaleSwitch": {
     "label": "Change language",
     "locale": "{locale, select, fr {🇫🇷} en {🇺🇸} other {Unknown}}"
+  },
+  "ThemeToggle": {
+    "label": "Toggle theme",
+    "light": "Light",
+    "dark": "Dark"
   }
 }

@@ -5,6 +5,7 @@ import { useTranslations } from "next-intl";
 import LocaleSwitch from "../commons/LocaleSwitch";
 import MaxWidthWrapper from "../commons/MaxWidthWrapper";
 import { SignIn, SignOut } from "@phosphor-icons/react";
+import ThemeToggle from "../commons/ThemeToggle";
 
 export default function Header() {
   const { data: session } = useSession();
@@ -41,6 +42,7 @@ export default function Header() {
             </button>
           )}
           <LocaleSwitch />
+          <ThemeToggle />
         </div>
       </header>
     </MaxWidthWrapper>
