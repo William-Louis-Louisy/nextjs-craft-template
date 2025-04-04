@@ -10,10 +10,17 @@
   "Header": {
     "hello": "Bonjour",
     "logout": "Déconnexion",
-    "login": "Se connecter"
+    "login": "Se connecter",
+    "openUserMenu": "Ouvrir le menu utilisateur",
+    "openMainMenu": "Ouvrir le menu principal"
   },
   "LocaleSwitch": {
     "label": "Changer la langue",
     "locale": "{locale, select, fr {🇫🇷} en {🇺🇸} other {Inconnu}}"
+  },
+  "ThemeToggle": {
+    "label": "Changer le thème",
+    "light": "Lumineux",
+    "dark": "Sombre"
   }
 }

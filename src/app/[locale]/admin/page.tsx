@@ -11,7 +11,7 @@ export default async function AdminPage() {
   }
 
   return (
-    <MaxWidthWrapper className="flex flex-col items-center gap-8 py-12">
+    <MaxWidthWrapper className="flex flex-col items-center gap-8 mt-16 py-12">
       <AdminClient />
     </MaxWidthWrapper>
   );

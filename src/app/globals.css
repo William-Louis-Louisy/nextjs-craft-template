@@ -5,6 +5,8 @@
   --color-foreground: var(--foreground);
   --color-alternative: var(--alternative);
   --color-element: var(--element);
+  --color-moon: var(--moon);
+  --color-sun: var(--sun);
   --spacing-header: var(--header-h);
   --spacing-page: var(--page-min-h);
 }
@@ -18,16 +20,20 @@
   --page-min-h: calc(100dvh - var(--header-h));
 }
 
-@media (prefers-color-scheme: dark) {
-  :root {
-    --background: oklch(14.48% 0 0);
-    --foreground: oklch(94.61% 0 0);
-    --alternative: oklch(74.61% 0 0);
-    --element: oklch(24.78% 0 0);
-  }
-  html {
-    color-scheme: dark;
-  }
+html[data-theme="dark"] {
+  --background: oklch(14.48% 0 0);
+  --foreground: oklch(94.61% 0 0);
+  --alternative: oklch(74.61% 0 0);
+  --element: oklch(24.78% 0 0);
+
+  color-scheme: dark;
+}
+
+html[data-theme="light"] {
+  --background: oklch(94.61% 0 0);
+  --foreground: oklch(14.48% 0 0);
+  --alternative: oklch(34.48% 0 0);
+  --element: oklch(84.52% 0 0);
 }
 
 @layer base {
