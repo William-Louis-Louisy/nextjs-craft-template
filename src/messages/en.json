@@ -10,7 +10,9 @@
   "Header": {
     "hello": "Hello",
     "logout": "Logout",
-    "login": "Login"
+    "login": "Login",
+    "openUserMenu": "Open user menu",
+    "openMainMenu": "Open main menu"
   },
   "LocaleSwitch": {
     "label": "Change language",
