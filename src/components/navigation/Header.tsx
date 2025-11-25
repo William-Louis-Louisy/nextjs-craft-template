@@ -23,8 +23,6 @@ export default function Header() {
   const { data: session } = useSession();
   const t = useTranslations("Header");
 
-  console.log(session);
-
   return (
     <Disclosure as="nav" className={"fixed inset-x-0 top-0 z-50 bg-background"}>
       {/* Header */}

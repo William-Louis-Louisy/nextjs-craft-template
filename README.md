@@ -54,7 +54,7 @@ Welcome to the **Next.js 15.2 Fullstack Template**! This template is built with 
   Secure user authentication with Google OAuth. Users whose email matches the `ADMIN_EMAIL` environment variable are granted the ADMIN role.
 
 - **Tailwind CSS 4.0**  
-  Build and customize your UI using Tailwind's utility-first classes. Easily tweak your design in `tailwind.config.js`.
+  Build and customize your UI using Tailwind's utility-first classes.
 
 - **Internationalization (i18n)**  
   Effortlessly support multiple languages (default: English and French) with dynamic route segments and server-loaded translations.
