@@ -92,7 +92,7 @@ export default function Header() {
                 </div>
                 <MenuItems
                   transition
-                  className="bg-element absolute right-0 z-10 mt-2 w-48 origin-top-right rounded-md py-1 shadow-lg ring-0 transition focus:outline-none data-[closed]:scale-95 data-[closed]:transform data-[closed]:opacity-0 data-[enter]:duration-200 data-[enter]:ease-out data-[leave]:duration-75 data-[leave]:ease-in"
+                  className="bg-element absolute right-0 z-10 mt-2 w-48 origin-top-right rounded-md py-1 shadow-lg ring-0 transition focus:outline-none data-closed:scale-95 data-closed:transform data-closed:opacity-0 data-enter:duration-200 data-enter:ease-out data-leave:duration-75 data-leave:ease-in"
                 >
                   {session.user?.role === 'ADMIN' && (
                     <MenuItem>
@@ -104,6 +104,15 @@ export default function Header() {
                       </Link>
                     </MenuItem>
                   )}
+
+                  <MenuItem>
+                    <Link
+                      href="/profile"
+                      className="data-focus:bg-alternative data-focus:text-background block px-4 py-2 text-sm"
+                    >
+                      {t('navigation.userProfile')}
+                    </Link>
+                  </MenuItem>
 
                   <MenuItem>
                     <button
