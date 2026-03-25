@@ -1,8 +1,9 @@
-@import "tailwindcss";
+@import 'tailwindcss';
 
 @theme {
   --color-background: var(--background);
   --color-foreground: var(--foreground);
+  --color-accent: var(--accent);
   --color-alternative: var(--alternative);
   --color-element: var(--element);
   --color-moon: var(--moon);
@@ -14,13 +15,14 @@
 :root {
   --background: oklch(94.61% 0 0);
   --foreground: oklch(14.48% 0 0);
+  --accent: oklch(66.9% 0.13 230);
   --alternative: oklch(34.48% 0 0);
   --element: oklch(84.52% 0 0);
   --header-h: 4rem;
   --page-min-h: calc(100dvh - var(--header-h));
 }
 
-html[data-theme="dark"] {
+html[data-theme='dark'] {
   --background: oklch(14.48% 0 0);
   --foreground: oklch(94.61% 0 0);
   --alternative: oklch(74.61% 0 0);
@@ -29,7 +31,7 @@ html[data-theme="dark"] {
   color-scheme: dark;
 }
 
-html[data-theme="light"] {
+html[data-theme='light'] {
   --background: oklch(94.61% 0 0);
   --foreground: oklch(14.48% 0 0);
   --alternative: oklch(34.48% 0 0);
@@ -62,6 +64,6 @@ a {
   text-decoration: none;
 }
 
-h1 {
-  @apply text-4xl font-bold tracking-tight sm:text-6xl;
+h2 {
+  @apply text-foreground text-4xl font-semibold tracking-tight text-pretty sm:text-5xl;
 }

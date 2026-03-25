@@ -16,7 +16,7 @@ import LocaleSwitch from '../commons/LocaleSwitch';
 import { Link, usePathname } from '@/i18n/navigation';
 import MaxWidthWrapper from '../commons/MaxWidthWrapper';
 import { useSession, signIn, signOut } from 'next-auth/react';
-import { List, SignIn, SignOut, X } from '@phosphor-icons/react';
+import { ListIcon, SignInIcon, SignOutIcon, UserIcon, XIcon } from '@phosphor-icons/react';
 
 export default function Header() {
   const pathname = usePathname();
@@ -46,16 +46,16 @@ export default function Header() {
             {session ? (
               <Menu as="div" className="relative">
                 <div>
-                  <MenuButton className="hover:border-element relative flex cursor-pointer rounded-full border border-transparent text-sm duration-150 focus:outline-none">
+                  <MenuButton className="relative flex cursor-pointer rounded-full text-sm focus:outline-none">
                     <span className="absolute -inset-1.5" />
                     <span className="sr-only">{t('openUserMenu')}</span>
-                    <Image
-                      alt="avatar"
-                      src={session?.user.image ? session.user.image : '/no-avatar.webp'}
-                      width={36}
-                      height={36}
-                      className="rounded-full"
-                    />
+                    <span className="bg-element flex size-10 items-center justify-center rounded-full p-2">
+                      {session?.user.image ? (
+                        session.user.image
+                      ) : (
+                        <UserIcon weight="bold" size={20} />
+                      )}
+                    </span>
                   </MenuButton>
                 </div>
                 <MenuItems
@@ -78,7 +78,7 @@ export default function Header() {
                       className="data-[focus]:bg-alternative data-[focus]:text-background flex w-full cursor-pointer items-center gap-2 px-4 pt-2.5 pb-2 text-sm"
                       onClick={() => signOut()}
                     >
-                      <SignOut size={20} weight="bold" />
+                      <SignOutIcon size={20} weight="bold" />
                       <span className="hidden md:flex">{t('logout')}</span>
                     </button>
                   </MenuItem>
@@ -89,7 +89,7 @@ export default function Header() {
                 className="text-background bg-alternative hover:bg-foreground cursor-pointer rounded-md px-4 py-2 duration-150"
                 onClick={() => signIn('google')}
               >
-                <SignIn className="flex md:hidden" size={20} weight="bold" />
+                <SignInIcon className="flex md:hidden" size={20} weight="bold" />
                 <span className="hidden md:flex">{t('login')}</span>
               </button>
             )}
@@ -100,8 +100,8 @@ export default function Header() {
             <DisclosureButton className="group relative inline-flex items-center justify-center rounded-md p-2 focus:outline-none">
               <span className="absolute -inset-0.5" />
               <span className="sr-only">{t('openMainMenu')}</span>
-              <List aria-hidden="true" className="block h-6 w-6 group-data-[open]:hidden" />
-              <X aria-hidden="true" className="hidden h-6 w-6 group-data-[open]:block" />
+              <ListIcon aria-hidden="true" className="block h-6 w-6 group-data-[open]:hidden" />
+              <XIcon aria-hidden="true" className="hidden h-6 w-6 group-data-[open]:block" />
             </DisclosureButton>
           </div>
         </header>

@@ -5,7 +5,8 @@
   },
   "HomePage": {
     "title": "Next.js Craft Template",
-    "description": "A template for Next.js projects that include Next-Auth, Next-Intl and TailwindCSS"
+    "description": "A modern, robust, production-ready Next.js template designed to speed up development without compromising code quality.",
+    "learnMore": "Learn more"
   },
   "Header": {
     "hello": "Hello",
@@ -15,8 +16,8 @@
     "openMainMenu": "Open main menu"
   },
   "LocaleSwitch": {
-    "label": "Change language",
-    "locale": "{locale, select, fr {🇫🇷} en {🇺🇸} other {Unknown}}"
+    "label": "Changer de langue",
+    "locale": "{locale, select, fr {français} en {english} es {español} zh {中文} ja {日本語} ko {한국어} other {Unknown}}"
   },
   "ThemeToggle": {
     "label": "Toggle theme",

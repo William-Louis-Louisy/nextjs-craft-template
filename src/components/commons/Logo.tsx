@@ -1,14 +1,13 @@
-import { Link } from "@/i18n/navigation";
-import Image from "next/image";
-import React from "react";
+import Image from 'next/image';
+import { Link } from '@/i18n/navigation';
 
 export default function Logo() {
   return (
-    <Link href={"/"} className="inline-flex items-center gap-4">
-      <div className="relative size-12 rounded-full overflow-hidden">
-        <Image src="/bakerscript.png" alt="logo" fill />
+    <Link href={'/'} className="inline-flex items-center gap-4">
+      <div className="relative size-10 overflow-hidden rounded-full">
+        <Image src="/bakerscript.png" alt="logo" fill sizes="(max-width: 768px) 100vw, 50vw" />
       </div>
-      <span className="text-2xl font-black hidden md:inline">BakerScript</span>
+      <span className="hidden text-xl font-black md:inline">BakerScript</span>
     </Link>
   );
 }

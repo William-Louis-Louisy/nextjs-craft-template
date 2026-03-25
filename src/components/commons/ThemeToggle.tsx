@@ -1,36 +1,27 @@
-"use client";
+'use client';
 
-import { useTheme } from "next-themes";
-import { useEffect, useState } from "react";
-import { Moon, Sun } from "@phosphor-icons/react";
-import { useTranslations } from "next-intl";
+import { useTheme } from 'next-themes';
+import { useTranslations } from 'next-intl';
+import { MoonIcon, SunIcon } from '@phosphor-icons/react';
 
 export default function ThemeToggle() {
-  const t = useTranslations("ThemeToggle");
+  const t = useTranslations('ThemeToggle');
   const { setTheme, resolvedTheme } = useTheme();
-  const [mounted, setMounted] = useState(false);
-
-  // When mounted on client, now we can show the UI
-  useEffect(() => setMounted(true), []);
-
-  if (!mounted) return null;
 
   const toggleTheme = () => {
-    setTheme(resolvedTheme === "light" ? "dark" : "light");
+    setTheme(resolvedTheme === 'dark' ? 'light' : 'dark');
   };
 
   return (
     <button
-      className="cursor-pointer bg-element rounded-full p-2"
+      type="button"
+      className="bg-element relative inline-flex size-10 cursor-pointer items-center justify-center rounded-full p-2"
       onClick={toggleTheme}
-      aria-label={t("label")}
-      title={resolvedTheme === "dark" ? t("light") : t("dark")}
+      aria-label={t('label')}
+      title={t('label')}
     >
-      {resolvedTheme === "dark" ? (
-        <Sun size={20} weight="bold" />
-      ) : (
-        <Moon size={20} weight="bold" />
-      )}
+      <SunIcon size={20} weight="bold" className="hidden dark:block" aria-hidden="true" />
+      <MoonIcon size={20} weight="bold" className="block dark:hidden" aria-hidden="true" />
     </button>
   );
 }
