@@ -1,228 +1,124 @@
-# Next.js 15.2 Fullstack Template 🚀
+# Next.js Craft Template 🚀
 
-[![Next.js](https://img.shields.io/badge/Next.js-15.2-blue?logo=next.js)](https://nextjs.org/)
-[![TypeScript](https://img.shields.io/badge/TypeScript-4.x-blue?logo=typescript)](https://www.typescriptlang.org/)
-[![Tailwind CSS](https://img.shields.io/badge/TailwindCSS-4.0-blue?logo=tailwindcss)](https://tailwindcss.com/)
-[![NextAuth](https://img.shields.io/badge/NextAuth-5.0-blue?logo=nextauth)](https://next-auth.js.org/)
+[![Next.js](https://img.shields.io/badge/Next.js-16.2.1-black?logo=next.js)](https://nextjs.org/)
+[![React](https://img.shields.io/badge/React-19.2.4-149ECA?logo=react)](https://react.dev/)
+[![TypeScript](https://img.shields.io/badge/TypeScript-5.9.3-3178C6?logo=typescript)](https://www.typescriptlang.org/)
+[![Tailwind CSS](https://img.shields.io/badge/TailwindCSS-4.2.2-06B6D4?logo=tailwindcss)](https://tailwindcss.com/)
+[![NextAuth](https://img.shields.io/badge/NextAuth-4.24.13-7C3AED)](https://next-auth.js.org/)
+[![next-intl](https://img.shields.io/badge/next--intl-4.8.3-0F172A)](https://next-intl.dev/)
 [![License: MIT](https://img.shields.io/badge/License-MIT-green)](LICENSE)
 
 <div align="center">
-  <img src="https://ucarecdn.com/7a96a378-0837-459c-ae3d-1ade754ec2e4/-/preview/1000x455/" alt="Project Header" />
+  <img src="https://ucarecdn.com/7a96a378-0837-459c-ae3d-1ade754ec2e4/-/preview/1000x455/" alt="Next.js Craft Template preview" />
 </div>
-
----
-
-## Table of Contents
-
-- [Next.js 15.2 Fullstack Template 🚀](#nextjs-152-fullstack-template-)
-  - [Table of Contents](#table-of-contents)
-  - [Overview](#overview)
-  - [Features](#features)
-  - [Installation](#installation)
-  - [Project Structure](#project-structure)
-  - [Configuration](#configuration)
-    - [UI Components](#ui-components)
-    - [Deployment](#deployment)
-    - [Contributing](#contributing)
-    - [License](#license)
 
 ---
 
 ## Overview
 
-Welcome to the **Next.js 15.2 Fullstack Template**! This template is built with modern best practices and a passion for clean, maintainable code. It is designed to get you started quickly with a powerful fullstack setup including:
+**Next.js Craft Template** is a modern fullstack starter built for developers who want more than a barebones setup.
 
-- **TypeScript** for robust, type-safe code.
-- **Next.js App Router** for advanced routing and API capabilities.
-- **NextAuth with Google OAuth** with an integrated **ADMIN role** for secure authentication.
-- **Tailwind CSS 4.0** for rapid and flexible UI styling.
-- **Internationalization (i18n)** using next‑intl for a multilingual experience.
-- **Headless UI & Phosphor Icons** to build accessible, stylish components.
-- **Vercel-friendly** configuration for smooth deployment.
+It gives you a strong, production-minded foundation with **Next.js 16**, **React 19**, **TypeScript**, **Tailwind CSS 4**, **NextAuth**, **next-intl**, **next-themes**, and a curated UI stack designed for clean architecture, maintainability, and rapid iteration.
+
+Whether you are building a SaaS, a client project, an internal tool, or a polished product MVP, this template helps you start fast without sacrificing code quality.
+
+---
+
+## Why this template?
+
+Most starters either feel too empty or too opinionated.
+
+This one aims for the right balance:
+
+- **Modern stack, already wired**
+- **Authentication-ready**
+- **Internationalization-ready**
+- **Theme-ready**
+- **Accessible UI primitives**
+- **Clean developer experience**
+- **Scalable project foundation**
+- **Vercel-friendly deployment**
+
+It is designed to help you spend less time on repetitive setup and more time building actual product value.
 
 ---
 
 ## Features
 
-- **Next.js 15.2 & App Router**  
-  Utilize the latest Next.js features with a segment-based routing system and serverless API routes.
+### ⚡ Next.js 16 + App Router
 
-- **TypeScript**  
-  Benefit from static typing and enhanced code reliability throughout your project.
+Built with the latest **Next.js 16.2.1** and the **App Router** architecture for modern routing, layouts, server components, and scalable application structure.
 
-- **NextAuth with Google OAuth**  
-  Secure user authentication with Google OAuth. Users whose email matches the `ADMIN_EMAIL` environment variable are granted the ADMIN role.
+### 🔒 NextAuth with Google OAuth
 
-- **Tailwind CSS 4.0**  
-  Build and customize your UI using Tailwind's utility-first classes.
+Authentication is powered by **NextAuth 4.24.13**, with support for **Google OAuth** and session management already integrated into the stack.
 
-- **Internationalization (i18n)**  
-  Effortlessly support multiple languages (default: English and French) with dynamic route segments and server-loaded translations.
+### 👑 ADMIN role support
 
-- **Headless UI & Phosphor Icons**  
-  Integrate Headless UI for accessible, unstyled components and use Phosphor Icons to enhance your interface with elegant iconography.
+Users whose email matches the `ADMIN_EMAIL` environment variable are granted the **ADMIN** role, making it easy to protect dashboards, admin sections, and privileged routes.
 
-- **Vercel Friendly**  
-  Optimized for fast deployments on Vercel with lightweight middleware and efficient caching strategies.
+### 🌍 Internationalization with next-intl
 
----
+Built-in multilingual support with **next-intl**, including locale-based routing and translation message loading.
 
-## Installation
+Default setup includes **English** and **French**, and can easily be extended.
 
-1. **Clone the Repository**
+### 🎨 Tailwind CSS 4.2
 
-   ```bash
-   git clone https://github.com/your-username/your-repo.git
-   cd your-repo
-   ```
+Powered by **Tailwind CSS 4.2.2** for fast, maintainable, utility-first UI development.
 
-2. **Install Dependencies**
+### 🌗 Theme switching with next-themes
 
-   ```bash
-   npm install
-   ```
+Includes **next-themes** for dark mode and theme management on the client side.
 
-3. **Configure Environment Variables**
+### ♿ Accessible UI with Headless UI
 
-Create a .env.local file in the project root and add:
+Uses **@headlessui/react** for accessible, unstyled UI primitives such as menus, disclosures, dialogs, and more.
 
-```dotenv
-GOOGLE_CLIENT_ID=your_google_client_id
-GOOGLE_CLIENT_SECRET=your_google_client_secret
-ADMIN_EMAIL=admin@example.com
-NEXTAUTH_URL=https://your-deployment.vercel.app
-NEXTAUTH_SECRET=your_nextauth_secret
-```
+### ✨ Phosphor Icons
 
----
+Comes with **@phosphor-icons/react** for elegant, flexible iconography.
 
-## Project Structure
+### 🧹 Clean DX tooling
 
-```graphql
+Includes:
 
-├── src
-├── app/
-│   ├── favicon.ico
-│   ├── manifest.json
-│   ├── globals.css
-│   ├── providers.tsx
-│   ├── [locale]/
-│   │   ├── layout.tsx
-│   │   ├── page.tsx
-│   │   └── admin/
-│   │       └── page.tsx
-│   └── api/
-│       └── auth/
-│           └── [...nextauth]
-│               └── route.ts
-├── components/
-│   ├── navigation/
-│   │   ├── Header.tsx
-│   │   └── Footer.tsx
-│   └── commons/
-│       ├── MaxWidthWrapper.tsx
-│       ├── LocalSwitch.tsx
-│       └── Logo.tsx
-├── i18n/
-│   ├── navigation.ts
-│   ├── request.ts
-│   └── routing.ts
-├── messages/
-│   ├── en.json
-│   └── fr.json
-├── next.config.js
-├── postcss.config.mjs
-└── package.json
-```
+- **TypeScript 5.9**
+- **ESLint 10**
+- **Prettier 3.8**
+- **prettier-plugin-tailwindcss**
+
+for a clean and consistent developer experience.
+
+### ▲ Vercel-friendly
+
+Optimized for smooth deployment on **Vercel**, with a setup that works well with modern Next.js hosting workflows.
 
 ---
 
-## Configuration
+## Tech Stack
 
-**Next.js 15.2:** Uses the new App Router for a clear separation of server and client code.
-
-**TypeScript:** Enforces type safety and compile-time error checking for a robust codebase.
-
-**Tailwind v4.0:** Build your UI with customizable utility classes. Modify your theme in tailwind.config.js to align with your brand.
-
-**next‑intl:** Translation messages are stored in the /messages folder and dynamically loaded based on the active locale (e.g., /en/... and /fr/...).
-
-_To add a new language, simply add a JSON file in /messages and update i18n/routing.ts._
-
-**NextAuth:** Configured in app/api/auth/[...nextauth]/route.ts for seamless Google OAuth integration.
-
-**ADMIN Role:** Users whose email matches the ADMIN_EMAIL environment variable are granted the ADMIN role, allowing access to protected routes.
-
-Example of server-side admin route protection:
-
-```tsx
-import { getServerSession } from "next-auth";
-import { authOptions } from "@/app/api/auth/[...nextauth]/route";
-import { redirect } from "next/navigation";
-
-export default async function AdminPage() {
-  const session = await getServerSession(authOptions);
-  if (!session?.user || session.user.role !== "ADMIN") {
-    redirect("/");
-  }
-  return <h1>Admin Dashboard</h1>;
-}
-```
+- **Next.js** `16.2.1`
+- **React** `19.2.4`
+- **React DOM** `19.2.4`
+- **TypeScript** `5.9.3`
+- **Tailwind CSS** `4.2.2`
+- **PostCSS** `8.5.8`
+- **NextAuth** `4.24.13`
+- **next-intl** `4.8.3`
+- **next-themes** `0.4.6`
+- **Headless UI** `2.2.9`
+- **Phosphor Icons** `2.1.10`
+- **ESLint** `10`
+- **Prettier** `3.8.1`
 
 ---
 
-### UI Components
+## Getting Started
 
-**Headless UI**
-Utilize Headless UI to build accessible, unstyled components (e.g., modals, dropdowns) that you can fully style with Tailwind CSS.
-
-**Phosphor Icons**
-Enhance your interface with Phosphor Icons. For example:
-
-```tsx
-import { House } from "phosphor-react";
-
-export default function ExampleIcon() {
-  return <House size={32} weight="bold" />;
-}
-```
-
----
-
-### Deployment
-
-This template is optimized for Vercel. To deploy:
-
-**Push to GitHub**
-Push your project to a GitHub repository.
-
-**Connect to Vercel**
-Link your GitHub repository with Vercel.
-
-**Configure Environment Variables**
-Set up your environment variables in the Vercel dashboard.
-
-**Deploy**
-Deploy your project and enjoy a fast, edge-optimized site with automatic caching.
-
-### Contributing
-
-Contributions are welcome! To contribute:
-
-- Fork the Repository
-- Create a New Branch
+### 1. Clone the repository
 
 ```bash
-git checkout -b feature/my-new-feature
+git clone https://github.com/your-username/nextjs-craft-template.git
+cd nextjs-craft-template
 ```
-
-- Commit Your Changes
-  Use clear and descriptive commit messages.
-- Open a Pull Request
-  Submit a PR detailing your modifications.
-
-### License
-
-This project is licensed under the MIT License.
-
-<div align="center"> <sub>Crafted with passion and precision for an elegant and efficient fullstack development experience.</sub> </div>
