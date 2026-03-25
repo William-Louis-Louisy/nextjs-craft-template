@@ -100,7 +100,7 @@ export default function Header() {
                         href="/admin"
                         className="data-focus:bg-alternative data-focus:text-background block px-4 py-2 text-sm"
                       >
-                        Admin
+                        {t('navigation.adminDashboard')}
                       </Link>
                     </MenuItem>
                   )}
