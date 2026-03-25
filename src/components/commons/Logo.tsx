@@ -7,7 +7,7 @@ export default function Logo() {
       <div className="relative size-10 overflow-hidden rounded-full">
         <Image src="/bakerscript.png" alt="logo" fill sizes="(max-width: 768px) 100vw, 50vw" />
       </div>
-      <span className="hidden text-xl font-black md:inline">BakerScript</span>
+      <span className="text-xl font-black">BakerScript</span>
     </Link>
   );
 }

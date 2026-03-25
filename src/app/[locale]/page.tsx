@@ -58,7 +58,7 @@ export default function HomePage() {
                     target="_blank"
                     href={feature.href}
                     rel="noopener noreferrer"
-                    className="text-accent text-sm/6 font-semibold"
+                    className="text-accent/80 hover:text-accent text-sm/6 font-semibold duration-150"
                   >
                     {t('learnMore')} <span aria-hidden="true">→</span>
                   </a>

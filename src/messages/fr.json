@@ -13,7 +13,14 @@
     "logout": "Déconnexion",
     "login": "Se connecter",
     "openUserMenu": "Ouvrir le menu utilisateur",
-    "openMainMenu": "Ouvrir le menu principal"
+    "openMainMenu": "Ouvrir le menu principal",
+    "navigation": {
+      "about": "A propos",
+      "faq": "FAQ",
+      "contact": "Contact",
+      "adminDashboard": "Tableau de bord administrateur",
+      "userProfile": "Profil Utilisateur"
+    }
   },
   "LocaleSwitch": {
     "label": "Change language",

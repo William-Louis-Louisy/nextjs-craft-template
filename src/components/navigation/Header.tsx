@@ -18,10 +18,20 @@ import MaxWidthWrapper from '../commons/MaxWidthWrapper';
 import { useSession, signIn, signOut } from 'next-auth/react';
 import { ListIcon, SignInIcon, SignOutIcon, UserIcon, XIcon } from '@phosphor-icons/react';
 
+export const navLinks = [
+  { tradKey: 'about', url: '#' },
+  { tradKey: 'faq', url: '#' },
+  { tradKey: 'contact', url: '#' },
+];
+
 export default function Header() {
   const pathname = usePathname();
-  const { data: session } = useSession();
+  const { data: session, status } = useSession();
   const t = useTranslations('Header');
+  const isLinkActive = (pathname: string, url: string) => {
+    if (url === '/') return pathname === '/';
+    return pathname === url || pathname.startsWith(`${url}/`);
+  };
 
   return (
     <Disclosure as="nav" className={'bg-background fixed inset-x-0 top-0 z-50'}>
@@ -30,11 +40,27 @@ export default function Header() {
         <header className="h-header flex items-center justify-between">
           <div className="flex">
             <Logo />
+          </div>
+          {/* Navigation */}
+          <div className="hidden items-center justify-center lg:ml-6 lg:grid lg:grid-cols-3">
+            {navLinks.map((link) => {
+              const active = isLinkActive(pathname, link.url);
 
-            {/* Navigation */}
-            <div className="hidden sm:ml-6 sm:flex sm:space-x-8">
-              {/** Here goes the navigation links */}
-            </div>
+              return (
+                <Link
+                  key={link.tradKey}
+                  href={link.url}
+                  className={cn(
+                    'hover:text-foreground/80 flex h-16 items-center justify-center border-b-2 px-6 duration-200',
+                    active
+                      ? 'text-accent border-accent font-bold'
+                      : 'text-foreground/60 hover:border-foreground/20 border-transparent font-medium',
+                  )}
+                >
+                  {t(`navigation.${link.tradKey}`)}
+                </Link>
+              );
+            })}
           </div>
 
           {/* Lang & Theme */}
@@ -51,7 +77,13 @@ export default function Header() {
                     <span className="sr-only">{t('openUserMenu')}</span>
                     <span className="bg-element flex size-10 items-center justify-center rounded-full p-2">
                       {session?.user.image ? (
-                        session.user.image
+                        <Image
+                          alt="avatar"
+                          src={session?.user.image}
+                          width={36}
+                          height={36}
+                          className="rounded-full"
+                        />
                       ) : (
                         <UserIcon weight="bold" size={20} />
                       )}
@@ -78,7 +110,7 @@ export default function Header() {
                       className="data-focus:bg-alternative data-focus:text-background flex w-full cursor-pointer items-center gap-2 px-4 pt-2.5 pb-2 text-sm"
                       onClick={() => signOut()}
                     >
-                      <SignOutIcon size={20} weight="bold" />
+                      <SignOutIcon size={20} />
                       <span className="hidden md:flex">{t('logout')}</span>
                     </button>
                   </MenuItem>
@@ -110,43 +142,58 @@ export default function Header() {
       {/* Mobile Menu */}
       <DisclosurePanel className="h-page sm:hidden">
         <div className="space-y-1 pt-2 pb-3">
-          {/** Here goes the navigation links wrapped in DisclosureButton */}
-          {session?.user?.role === 'ADMIN' && (
-            <DisclosureButton
-              as={Link}
-              href="/admin"
-              className={cn(
-                'block w-full border-l-4 py-2 pr-4 pl-3 text-base font-medium',
-                pathname === '/admin' ? 'border-foreground' : 'border-transparent',
+          <div className="flex h-full flex-col items-center justify-center">
+            <div className="absolute right-4 bottom-4 inline-flex items-center gap-4">
+              <ThemeToggle /> <LocaleSwitch />
+            </div>
+            {/** Here goes the navigation links wrapped in DisclosureButton */}
+            <>
+              {navLinks.map((link) => (
+                <DisclosureButton
+                  as={Link}
+                  key={link.tradKey}
+                  href={link.url}
+                  className={cn(
+                    'py-6 text-center text-xl',
+                    pathname === link.url
+                      ? 'text-accent font-bold'
+                      : 'text-foreground/60 font-medium',
+                  )}
+                >
+                  {t(`navigation.${link.tradKey}`)}
+                </DisclosureButton>
+              ))}
+            </>
+
+            {/* Logged Nav */}
+            <div className="border-foreground/30 flex flex-col items-center gap-4 border-t pt-6">
+              {session?.user?.role === 'ADMIN' && (
+                <DisclosureButton
+                  as={Link}
+                  href="/admin"
+                  className="block px-4 py-2 text-sm data-focus:text-white"
+                >
+                  {t('navigation.adminDashboard')}
+                </DisclosureButton>
               )}
-            >
-              Admin
-            </DisclosureButton>
-          )}
-        </div>
-        <div className="border-alternative border-t pt-4 pb-3">
-          <div className="flex items-center px-4">
-            <div className="shrink-0">
-              <Image
-                alt="avatar"
-                src={session?.user.image ? session.user.image : '/no-avatar.webp'}
-                width={36}
-                height={36}
-                className="rounded-full"
-              />
+
+              <DisclosureButton
+                as={Link}
+                href="/profile"
+                className="block px-4 py-2 text-sm data-focus:text-white"
+              >
+                {t('navigation.userProfile')}
+              </DisclosureButton>
+
+              <DisclosureButton
+                as="button"
+                type="button"
+                className="inline-flex cursor-pointer items-center gap-1 px-4 py-2 text-sm disabled:opacity-50 data-focus:text-white"
+                onClick={() => signOut()}
+              >
+                <SignOutIcon size={20} /> {t('logout')}
+              </DisclosureButton>
             </div>
-            <div className="ml-3">
-              <div className="text-base font-medium text-gray-800">{session?.user.name}</div>
-              <div className="text-sm font-medium text-gray-500">{session?.user.email}</div>
-            </div>
-          </div>
-          <div className="mt-3 space-y-1">
-            <DisclosureButton
-              className="block px-4 py-2 text-base font-medium"
-              onClick={() => signOut()}
-            >
-              {t('logout')}
-            </DisclosureButton>
           </div>
         </div>
       </DisclosurePanel>
