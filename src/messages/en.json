@@ -11,7 +11,7 @@
   "Header": {
     "hello": "Hello",
     "logout": "Logout",
-    "login": "Login",
+    "login": "Sign in",
     "openUserMenu": "Open user menu",
     "openMainMenu": "Open main menu"
   },

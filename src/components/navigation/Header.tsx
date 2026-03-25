@@ -66,7 +66,7 @@ export default function Header() {
                     <MenuItem>
                       <Link
                         href="/admin"
-                        className="data-[focus]:bg-alternative data-[focus]:text-background block px-4 py-2 text-sm"
+                        className="data-focus:bg-alternative data-focus:text-background block px-4 py-2 text-sm"
                       >
                         Admin
                       </Link>
@@ -75,7 +75,7 @@ export default function Header() {
 
                   <MenuItem>
                     <button
-                      className="data-[focus]:bg-alternative data-[focus]:text-background flex w-full cursor-pointer items-center gap-2 px-4 pt-2.5 pb-2 text-sm"
+                      className="data-focus:bg-alternative data-focus:text-background flex w-full cursor-pointer items-center gap-2 px-4 pt-2.5 pb-2 text-sm"
                       onClick={() => signOut()}
                     >
                       <SignOutIcon size={20} weight="bold" />
@@ -86,11 +86,11 @@ export default function Header() {
               </Menu>
             ) : (
               <button
-                className="text-background bg-alternative hover:bg-foreground cursor-pointer rounded-md px-4 py-2 duration-150"
+                className="text-background bg-accent/80 hover:bg-accent hover:text-foreground inline-flex h-10 cursor-pointer items-center gap-1 rounded-md px-4 py-2 duration-150"
                 onClick={() => signIn('google')}
               >
-                <SignInIcon className="flex md:hidden" size={20} weight="bold" />
-                <span className="hidden md:flex">{t('login')}</span>
+                <SignInIcon className="flex" size={20} />
+                <span className="hidden text-sm md:flex">{t('login')}</span>
               </button>
             )}
           </div>
@@ -100,8 +100,8 @@ export default function Header() {
             <DisclosureButton className="group relative inline-flex items-center justify-center rounded-md p-2 focus:outline-none">
               <span className="absolute -inset-0.5" />
               <span className="sr-only">{t('openMainMenu')}</span>
-              <ListIcon aria-hidden="true" className="block h-6 w-6 group-data-[open]:hidden" />
-              <XIcon aria-hidden="true" className="hidden h-6 w-6 group-data-[open]:block" />
+              <ListIcon aria-hidden="true" className="block h-6 w-6 group-data-open:hidden" />
+              <XIcon aria-hidden="true" className="hidden h-6 w-6 group-data-open:block" />
             </DisclosureButton>
           </div>
         </header>
@@ -126,7 +126,7 @@ export default function Header() {
         </div>
         <div className="border-alternative border-t pt-4 pb-3">
           <div className="flex items-center px-4">
-            <div className="flex-shrink-0">
+            <div className="shrink-0">
               <Image
                 alt="avatar"
                 src={session?.user.image ? session.user.image : '/no-avatar.webp'}
