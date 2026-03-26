@@ -18,7 +18,7 @@
 
 **Next.js Craft Template** is a modern fullstack starter built for developers who want more than a barebones setup.
 
-It gives you a strong, production-minded foundation with **Next.js 16**, **React 19**, **TypeScript**, **Tailwind CSS 4**, **NextAuth**, **next-intl**, **next-themes**, and a curated UI stack designed for clean architecture, maintainability, and rapid iteration.
+It gives you a strong, production-minded foundation with **Next.js 16**, **React 19**, **TypeScript**, **Tailwind CSS 4**, **NextAuth**, **next-intl**, and a curated UI stack designed for clean architecture, maintainability, and rapid iteration.
 
 Whether you are building a SaaS, a client project, an internal tool, or a polished product MVP, this template helps you start fast without sacrificing code quality.
 
@@ -67,10 +67,6 @@ Default setup includes **English** and **French**, and can easily be extended.
 
 Powered by **Tailwind CSS 4.2.2** for fast, maintainable, utility-first UI development.
 
-### 🌗 Theme switching with next-themes
-
-Includes **next-themes** for dark mode and theme management on the client side.
-
 ### ♿ Accessible UI with Headless UI
 
 Uses **@headlessui/react** for accessible, unstyled UI primitives such as menus, disclosures, dialogs, and more.
@@ -106,7 +102,6 @@ Optimized for smooth deployment on **Vercel**, with a setup that works well with
 - **PostCSS** `8.5.8`
 - **NextAuth** `4.24.13`
 - **next-intl** `4.8.3`
-- **next-themes** `0.4.6`
 - **Headless UI** `2.2.9`
 - **Phosphor Icons** `2.1.10`
 - **ESLint** `10`

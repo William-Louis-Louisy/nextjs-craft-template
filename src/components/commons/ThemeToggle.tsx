@@ -1,12 +1,18 @@
 'use client';
 
-import { useTheme } from 'next-themes';
+import { useEffect, useState } from 'react';
+import { useTheme } from '@/components/providers/ThemeProvider';
 import { useTranslations } from 'next-intl';
 import { MoonIcon, SunIcon } from '@phosphor-icons/react';
 
 export default function ThemeToggle() {
   const t = useTranslations('ThemeToggle');
   const { setTheme, resolvedTheme } = useTheme();
+  const [mounted, setMounted] = useState(false);
+
+  useEffect(() => {
+    setMounted(true);
+  }, []);
 
   const toggleTheme = () => {
     setTheme(resolvedTheme === 'dark' ? 'light' : 'dark');
@@ -20,8 +26,11 @@ export default function ThemeToggle() {
       aria-label={t('label')}
       title={t('label')}
     >
-      <SunIcon size={20} weight="bold" className="hidden dark:block" aria-hidden="true" />
-      <MoonIcon size={20} weight="bold" className="block dark:hidden" aria-hidden="true" />
+      {mounted && resolvedTheme === 'dark' ? (
+        <SunIcon size={20} weight="bold" aria-hidden="true" />
+      ) : (
+        <MoonIcon size={20} weight="bold" aria-hidden="true" />
+      )}
     </button>
   );
 }

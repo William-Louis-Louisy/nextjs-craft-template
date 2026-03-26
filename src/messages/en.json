@@ -8,6 +8,13 @@
     "description": "A modern, robust, production-ready Next.js template designed to speed up development without compromising code quality.",
     "learnMore": "Learn more"
   },
+  "NotFoundPage": {
+    "eyebrow": "404",
+    "title": "Page not found",
+    "description": "The page you requested does not exist or may have been moved.",
+    "primaryAction": "Go back home",
+    "secondaryAction": "Return to previous page"
+  },
   "Header": {
     "hello": "Hello",
     "logout": "Logout",

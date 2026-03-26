@@ -1,23 +1,25 @@
 'use client';
 
 import Header from '@/components/navigation/Header';
+import { ThemeProvider } from '@/components/providers/ThemeProvider';
 import { SessionProvider } from 'next-auth/react';
 import { NextIntlClientProvider } from 'next-intl';
-import { ThemeProvider } from 'next-themes';
 
 export default function Providers({
   children,
+  defaultTheme,
   locale,
   messages,
 }: {
   children: React.ReactNode;
+  defaultTheme: 'light' | 'dark' | 'system';
   locale: string;
   messages: Record<string, string>;
 }) {
   return (
     <SessionProvider>
       <NextIntlClientProvider locale={locale} messages={messages} timeZone="Europe/Paris">
-        <ThemeProvider attribute="data-theme" defaultTheme="system" enableSystem={true}>
+        <ThemeProvider defaultTheme={defaultTheme}>
           <Header />
           {children}
         </ThemeProvider>

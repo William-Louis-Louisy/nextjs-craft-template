@@ -8,6 +8,13 @@
     "description": "Un template Next.js moderne, robuste et prêt pour la production, conçu pour accélérer le développement sans compromettre la qualité du code.",
     "learnMore": "En savoir plus"
   },
+  "NotFoundPage": {
+    "eyebrow": "Erreur",
+    "title": "Page introuvable",
+    "description": "La page demandée n'existe pas ou a peut-être été déplacée.",
+    "primaryAction": "Retour à l'accueil",
+    "secondaryAction": "Revenir en arrière"
+  },
   "Header": {
     "hello": "Bonjour",
     "logout": "Déconnexion",
